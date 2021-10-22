@@ -1,4 +1,6 @@
-# clojure-benchmark
+# clojure-benchmarks
+
+[![Clojars Project](https://img.shields.io/clojars/v/org.clojars.mdwhatcott/benchmarks.svg)](https://clojars.org/org.clojars.mdwhatcott/benchmarks)
 
 A simple library for benchmarking bits of clojure code.
 

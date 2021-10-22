@@ -1,6 +1,6 @@
-(defproject org.clojars.mdwhatcott/clojure-benchmark "0.3.0"
+(defproject org.clojars.mdwhatcott/benchmarks "0.3.0"
   :description "Benchmarking utilities for Clojure code."
-  :url "https://github.com/mdwhatcott/clojure-benchmark"
+  :url "https://github.com/mdwhatcott/clojure-benchmarks"
   :license {:name "MIT"
             :url  "https://opensource.org/licenses/MIT"}
   :dependencies [[org.clojure/clojure "1.10.3"]]
