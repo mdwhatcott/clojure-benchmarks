@@ -10,7 +10,7 @@ A simple library for benchmarking bits of clojure code.
 ## Examples
 
 ```clojure
-(require '[clojure-benchmark.bench :as bench])
+(require '[benchmarks.bench :as bench])
 
 (println "- big reduce:        " (bench/report #(reduce * (range 10000000))))
 (println "- int/float division:" (bench/report #(int (/ 101 10))))
