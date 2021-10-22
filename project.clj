@@ -7,7 +7,8 @@
   :profiles {:dev {:dependencies [[speclj "3.3.2"]]}}
   :plugins [[speclj "3.3.2"]
             [lein-codox "0.10.7"]]
-  :codox {:output-path "docs"
+  :codox {:project     {:name "clojure-benchmark"}
+          :output-path "docs"
           :metadata    {:doc/format :markdown}
           :source-uri  "https://github.com/mdwhatcott/clojure-benchmark/blob/{version}/{filepath}#L{line}"}
   :test-paths ["spec"])
