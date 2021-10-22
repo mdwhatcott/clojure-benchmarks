@@ -1,4 +1,4 @@
-(ns clojure-benchmark.bench)
+(ns benchmarks.bench)
 
 (def nanosecond 1)
 (def microsecond (* nanosecond 1000))

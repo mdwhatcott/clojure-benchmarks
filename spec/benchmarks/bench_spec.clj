@@ -1,6 +1,6 @@
-(ns clojure-benchmark.bench-spec
+(ns benchmarks.bench-spec
   (:require [speclj.core :refer :all]
-            [clojure-benchmark.bench :as bench]))
+            [benchmarks.bench :as bench]))
 
 (defn fake-time-it
   "This hand-rolled fake is meant to stand in for the time-it
