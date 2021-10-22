@@ -32,23 +32,23 @@ A simple library for benchmarking bits of clojure code.
 Generate HTML documentation:
 
 ```
-$ lein codox
+$ make docs
 ```
 
 Run tests (once):
 
 ```
-$ lein spec
+$ make test
 ```
 
 Run Tests (auto-run on-save):
 
 ```
-$ lein spec -a
+$ make test-auto
 ```
 
-Deploy to Clojars (requires username and deploy token):
+Publish to Clojars (runs tests, generates docs, and requires username, deploy token, and GPG key):
 
 ```
-$ lein deploy clojars
+$ make publish
 ```
