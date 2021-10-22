@@ -1,4 +1,4 @@
-(defproject clojure-benchmark "0.3.0"
+(defproject org.clojars.mdwhatcott/clojure-benchmark "0.3.0"
   :description "Benchmarking utilities for Clojure code."
   :url "https://github.com/mdwhatcott/clojure-benchmark"
   :license {:name "MIT"

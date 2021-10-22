@@ -1,9 +1,9 @@
 *.iml
-*jar
+*.jar
 .idea
 classes
 lib
 out
 pom.xml
 target
-
+*.pom
