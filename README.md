@@ -5,6 +5,8 @@
 A simple library for benchmarking bits of clojure code.
 
 
+## [API Documentation](https://mdwhatcott.github.io/clojure-benchmarks/)
+
 ## Examples
 
 ```clojure
@@ -25,7 +27,7 @@ A simple library for benchmarking bits of clojure code.
 - integer division:   {:total-ops 10**7, :total-time 74.7ms, :per-op-time 7ns}
 ```
 
-## Utilities
+## Dev Utilities
 
 Generate HTML documentation:
 
