@@ -16,6 +16,11 @@
     (>= ns millisecond) (format "%.1fms" (float (/ ns millisecond)))
     (>= ns microsecond) (format "%.1fµs" (float (/ ns microsecond)))
     :else,,,,,,,,,,,,,, (format "%dns" ns)))
+(defn ^:private format-order-of-magnitude [ops]
+  (as-> (str ops) $
+        (filter #{\0} $)
+        (count $)
+        (format "10**%d" $)))
 
 (def max-ops 10000000)
 (def max-duration second_)
@@ -68,6 +73,6 @@
   Can be passed to println for a decent report."
   [f]
   (let [{:keys [total-ops total-ns per-op-ns]} (benchmark f)]
-    {:total-ops   (format "10**%d" (count (filter #{\0} (str total-ops))))
+    {:total-ops   (format-order-of-magnitude total-ops)
      :total-time  (format-duration total-ns)
      :per-op-time (format-duration per-op-ns)}))
