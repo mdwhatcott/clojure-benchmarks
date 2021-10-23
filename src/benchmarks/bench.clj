@@ -37,9 +37,9 @@
   [f n]
   (let [elapsed (time-it f n)
         average (quot elapsed n)]
-    {:total-ops  n
-     :total-ns   elapsed
-     :per-op-ns  average}))
+    {:total-ops n
+     :total-ns  elapsed
+     :per-op-ns average}))
 
 (defn- within-time-threshold [{:keys [total-ns]}] (< total-ns max-duration))
 (defn- within-ops-threshold [{:keys [total-ops]}] (< total-ops max-ops))
@@ -47,8 +47,6 @@
 (def ^:private within-thresholds
   (every-pred within-time-threshold
               within-ops-threshold))
-
-(def ^:private powers-of-10 (partial * 10))
 
 (defn benchmark
   "benchmark passes the provided function `f` to bench
@@ -58,10 +56,12 @@
   per-operation average.
   It returns the low-level results of the last call to bench."
   [f]
-  (->> (iterate powers-of-10 1)
-       (map (partial bench f))
-       (drop-while within-thresholds)
-       first))
+  (let [by-powers-of-10 #(* 10 %)
+        benchmark       #(bench f %)]
+    (as-> (iterate by-powers-of-10 1) $
+          (map benchmark $)
+          (drop-while within-thresholds $)
+          (first $))))
 
 (defn report
   "Translates the result of benchmark into more human-readable values.
