@@ -50,18 +50,18 @@
     (context "and a slow-running function"
       (it "returns the first stats where :total_elapsed >= max time threshold"
         (with-redefs [bench/time-it fake-time-it]
-          (let [{:keys [total-ops total-ns per-op-ns]} (bench/benchmark slow-f)]
-            (->> total-ns (should= bench/second_))
-            (->> per-op-ns (should= (slow-f)))
-            (->> total-ops (should= (quot bench/second_ (slow-f))))))))
+          (let [{:keys [total-ops total-time per-op-time]} (bench/report slow-f)]
+            (->> total-time (should= "1.0s"))
+            (->> per-op-time (should= "1.0ms"))
+            (->> total-ops (should= "10**3"))))))
 
     (context "and a fast-running function"
       (it "returns the first stats where 'n' >= max operations threshold"
         (with-redefs [bench/time-it fake-time-it]
-          (let [{:keys [total-ops total-ns per-op-ns]} (bench/benchmark fast-f)]
-            (->> total-ops (should= bench/max-ops))
-            (->> per-op-ns (should= (fast-f)))
-            (->> total-ns (should= (* bench/max-ops (fast-f)))))))))
+          (let [{:keys [total-ops total-time per-op-time]} (bench/report fast-f)]
+            (->> total-ops (should= "10**7"))
+            (->> per-op-time (should= "1ns"))
+            (->> total-time (should= "10.0ms")))))))
   )
 
 #_(describe "Examples"
