@@ -16,8 +16,7 @@
 (defn fast-f [] bench/nanosecond)
 
 (describe "Durations"
-  (for [[input expected] {0                          "0"
-                          1                          "1ns"
+  (for [[input expected] {1                          "1ns"
                           1000                       "1.0µs"
                           1100                       "1.1µs"
                           (* 2200 bench/microsecond) "2.2ms"

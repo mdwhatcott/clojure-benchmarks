@@ -11,11 +11,11 @@
   value (ie. 32ns, 43.2µs, 54.7ms, 3.1s)."
   [ns]
   (cond
-    (zero? ns) "0"
-    (>= ns second_),,,, (format "%.1fs" (float (/ ns second_)))
-    (>= ns millisecond) (format "%.1fms" (float (/ ns millisecond)))
-    (>= ns microsecond) (format "%.1fµs" (float (/ ns microsecond)))
-    :else,,,,,,,,,,,,,, (format "%dns" ns)))
+    (>= ns second_),,,, (format (str "%.1fs") (float (/ ns second_)))
+    (>= ns millisecond) (format (str "%.1fms") (float (/ ns millisecond)))
+    (>= ns microsecond) (format (str "%.1fµs") (float (/ ns microsecond)))
+    :else,,,,,,,,,,,,,, (format (str "%dns") ns)))
+
 (defn ^:private format-order-of-magnitude [ops]
   (as-> (str ops) $
         (filter #{\0} $)
