@@ -4,6 +4,7 @@
 
 A simple library for benchmarking bits of clojure code.
 
+[![cljdoc badge](https://cljdoc.org/badge/org.clojars.mdwhatcott/benchmarks)](https://cljdoc.org/d/org.clojars.mdwhatcott/benchmarks)
 
 ## [API Documentation](https://mdwhatcott.github.io/clojure-benchmarks/)
 
