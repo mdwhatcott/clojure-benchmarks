@@ -1,10 +1,10 @@
 # clojure-benchmarks
 
-[![Clojars Project](https://img.shields.io/clojars/v/org.clojars.mdwhatcott/benchmarks.svg)](https://clojars.org/org.clojars.mdwhatcott/benchmarks)
+[![cljdoc badge](https://cljdoc.org/badge/org.clojars.mdwhatcott/benchmarks)](https://cljdoc.org/d/org.clojars.mdwhatcott/benchmarks) [![Clojars Project](https://img.shields.io/clojars/v/org.clojars.mdwhatcott/benchmarks.svg)](https://clojars.org/org.clojars.mdwhatcott/benchmarks)
+
 
 A simple library for benchmarking bits of clojure code.
 
-[![cljdoc badge](https://cljdoc.org/badge/org.clojars.mdwhatcott/benchmarks)](https://cljdoc.org/d/org.clojars.mdwhatcott/benchmarks)
 
 ## [API Documentation](https://mdwhatcott.github.io/clojure-benchmarks/)
 
